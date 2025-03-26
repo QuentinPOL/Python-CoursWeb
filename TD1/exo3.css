@@ -1,0 +1,41 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.item-a {
+  grid-area: header;
+}
+.item-b {
+  grid-area: main;
+}
+.item-c {
+  grid-area: sidebar;
+}
+.item-d {
+  grid-area: footer;
+}
+
+.container {
+    display: grid;
+    height: 100vh; /* prend toute la hauteur de la fenêtre */ 
+    width: 100vw;  /* prend toute la largeur de la fenêtre */
+  
+    grid-template-columns: 25% 25% 25% 25%; /* 4 colonnes égales */
+    grid-template-rows: 20% 60% 20%; /* Répartition des lignes : header, contenu, footer */
+  
+    grid-template-areas: 
+      "header header header header"
+      "main main . sidebar"
+      "footer footer footer footer";
+    
+    gap: 5px;
+    background: #ccc;
+}
+
+.container > div {
+    padding: 10px;
+    background: #eee;
+    text-align: center;
+    border: 1px solid #999;
+}

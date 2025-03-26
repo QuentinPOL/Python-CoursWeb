@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+TP  : HTML5test (IE, Firefox,...)
+
+De quel(s) équipement(s) électronique(s) disposez vous ? <br>
+<select name="eqt" size="3" multiple="multiple">
+  <option value="mac">Ordinateur de type Macintsoch</option>
+  <option value="pc" selected="selected">Ordinateur de type PC</option>
+  <option value="tel">Téléphone portable</option>
+  <option value="gopro">Caméra numérique GoPro</option>
+  <option value="console">Console de jeux</option>
+</select>
+
+    <form class="" action="index.html" method="post">
+      Quel est votre département ?<br>
+      <select name="departement">
+        <option value="01">Ain</option>
+        <option value="02">Aisne</option>
+        ...
+<option value="94">Val de Marne</option>
+        <option value="95">Val d’Oise</option>
+      </select>
+    </form>
+    <form class="" action="index.html" method="post">
+<textarea name="adresse" rows="8" cols="40">Nom Prénom
+Rue
+Code postal - Ville</textarea>
+    </form>
+
+    <form class="" action="index.html" method="post">
+      <label for="">Nom : </label>
+      <input type="text" name="name" value="" placeholder="Remplir ici"> <br>
+      <label for="">Nom : </label>
+      <input type="text" name="login" value="Martin"> <br>
+      <label for="">Login : </label>
+      <input type="password" name="mdp" value="sqdqsd"> <br>
+    </form>
+<input type="hidden" name="etape" value="3" >
+    <form class="" action="index.html" method="post">
+      <label for="">Moyen de transport</label><br>
+      <input type="checkbox" name="name" value="voiture" checked="checked"> <label for="">Voiture</label><br>
+      <input type="checkbox" name="name" value="velo"> <label for="">Vélo</label><br>
+      <input type="checkbox" name="name" value="moto"> <label for="">Moto</label><br>
+      <input type="checkbox" name="name" value="scooter"> <label for="">Scooter</label><br>
+    </form>
+
+    <form class="" action="index.html" method="post">
+      <label for="">Département d'études : </label><br>
+      <input type="radio" name="dut" value="rt"><label for="">Réseaux et Télécoms</label><br>
+      <input type="radio" name="dut" value="gccd"><label for="">Génie civil</label><br>
+      <input type="radio" name="dut" value="tc"><label for="">Technique de commercialisation</label><br>
+    </form>
+  </body>
+</html>
