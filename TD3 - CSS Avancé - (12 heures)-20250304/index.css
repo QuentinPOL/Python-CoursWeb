@@ -1,0 +1,182 @@
+/* Import des polices */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('assets/fonts/Montserrat.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/fonts/Roboto.ttf') format('truetype');
+}
+
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ----- HEADER ----- */
+header {
+    padding: 10px 20px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+header nav ul li,
+header nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    padding-bottom: 3px;
+}
+
+header nav ul li a:hover {
+    color: lightcoral;
+}
+
+header nav ul li a:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: lightcoral;
+}
+
+/* ----- LAYOUT PRINCIPAL ----- */
+.container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    flex: 1;
+    overflow: hidden;
+}
+
+aside {
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+aside ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+aside ul li {
+    padding: 8px 10px;
+    background-color: var(--aside-item-bg);
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+aside ul li:hover {
+    background-color: lightcoral;
+    color: white;
+}
+
+aside ul li.static_elt {
+    background-color: lightblue;
+    color: black;
+    cursor: default;
+}
+aside ul li.static_elt:hover {
+    background-color: lightblue;
+}
+
+/* ----- CONTENU ----- */
+.container > div {
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* ----- COULEURS LIGHT MODE ----- */
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-color: #ffffff;
+        --text-color: #222;
+        --aside-bg: #ddd;
+        --aside-item-bg: #eee;
+        --aside-item-hover-bg: #ccc;
+        --header-bg: #f0f0f0;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+    }
+
+    header {
+        background-color: var(--header-bg);
+    }
+
+    aside {
+        background-color: var(--aside-bg);
+    }
+}
+
+/* ----- COULEURS DARK MODE ----- */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #121212;
+        --text-color: #e0e0e0;
+        --aside-bg: #1e1e1e;
+        --aside-item-bg: #2a2a2a;
+        --aside-item-hover-bg: #3a3a3a;
+        --header-bg: #1a1a1a;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+    }
+
+    header {
+        background-color: var(--header-bg);
+    }
+
+    aside {
+        background-color: var(--aside-bg);
+    }
+
+    aside ul li.static_elt {
+        background-color: lightblue; /* toujours lightblue */
+    }
+}
+
+/* ----- RESPONSIVE ----- */
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    aside {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    .container > div {
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
